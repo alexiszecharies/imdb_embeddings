@@ -16,6 +16,9 @@ try:
         pinecone_api_key = data['API_PINECONE']
 except Exception as e:
     print(e)
+    print('running in stremlit')
+    api_hugging = st.secrets["API_HUGGING"]
+    pinecone_api_key = st.secrets["API_PINECONE"]
 
 # Set the page layout to wide mode
 
