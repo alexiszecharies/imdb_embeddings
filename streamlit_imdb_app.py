@@ -7,9 +7,9 @@ from pinecone import ServerlessSpec
 from pinecone import Pinecone as PineconeClient
 import time
 from datetime import datetime
-import yaml
 
 try:
+    import yaml
     with open('config.yaml') as f:
         data = yaml.load(f, Loader=yaml.FullLoader)
         api_hugging = data['API_HUGGING']
