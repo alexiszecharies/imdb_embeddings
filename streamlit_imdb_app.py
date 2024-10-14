@@ -9,16 +9,16 @@ import time
 from datetime import datetime
 
 try:
-    import yaml
-    with open('config.yaml') as f:
-        data = yaml.load(f, Loader=yaml.FullLoader)
-        api_hugging = data['API_HUGGING']
-        pinecone_api_key = data['API_PINECONE']
+  import yaml
+  with open('config.yaml') as f:
+      data = yaml.load(f, Loader=yaml.FullLoader)
+      api_hugging = data['API_HUGGING']
+      pinecone_api_key = data['API_PINECONE']
 except Exception as e:
-    print(e)
-    print('running in stremlit')
-    api_hugging = st.secrets["API_HUGGING"]
-    pinecone_api_key = st.secrets["API_PINECONE"]
+  print(e)
+  print('running in stremlit')
+  api_hugging = st.secrets["API_HUGGING"]
+  pinecone_api_key = st.secrets["API_PINECONE"]
 
 # Set the page layout to wide mode
 
@@ -197,3 +197,5 @@ if st.button(search_button_label):
     else:
         # Display results as cards
         display_results_in_two_columns(results)
+    
+    query_text = ''
